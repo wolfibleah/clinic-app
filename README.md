@@ -1,4 +1,4 @@
-# ClinicApp 🏥
+# ClinicApp 
 
 A role-based medical clinic management app built from scratch using React and Supabase.
 
@@ -26,12 +26,10 @@ The app enforces business rules like no appointments outside 08:00–17:00, and 
 
 ## Tools & LLMs used
 
-- **Claude (claude.ai)** — used throughout the entire build for architecture decisions, generating React components, debugging Supabase queries, and iterating on features step by step
+- **Claude (claude.ai)** — used throughout the build for architecture decisions
 - **Cursor** — AI-powered code editor that accelerated writing and editing files
 - **Supabase** — PostgreSQL database with built-in authentication
 - **React + Vite + Tailwind CSS + React Router**
-
-## Hallucination / Technical Hurdle
 
 ## Hallucination / Technical Hurdle
 
