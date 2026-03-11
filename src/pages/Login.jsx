@@ -115,15 +115,3 @@ export default function Login() {
   )
 }
 
-async function fetchProfile(userId) {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single()
-    console.log('User ID:', userId)
-    console.log('Profile data:', data)
-    console.log('Profile error:', error)
-    setProfile(data)
-    setLoading(false)
-  }

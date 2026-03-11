@@ -41,7 +41,7 @@ export default function PatientDashboard() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Bună ziua, {profile?.full_name}! 👋</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Bună ziua, {profile?.full_name}!</h1>
         <p className="text-gray-500 text-sm mt-1">Iată ultimele tale programări</p>
       </div>
 

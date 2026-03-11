@@ -18,6 +18,10 @@ export default function AdminDoctors() {
 
   async function handleSubmit() {
     if (!form.name) return alert('Numele este obligatoriu!')
+    if (!form.specialization) return alert('Specializarea este obligatorie!')
+    if (!form.email) return alert('Email-ul este obligatoriu!')
+    if (!/\S+@\S+\.\S+/.test(form.email)) return alert('Email invalid!')
+  
     if (editing) {
       await supabase.from('doctors').update(form).eq('id', editing)
     } else {
@@ -58,9 +62,9 @@ export default function AdminDoctors() {
           <h2 className="font-semibold text-gray-700 mb-4">{editing ? 'Editează Doctor' : 'Doctor Nou'}</h2>
           <div className="grid grid-cols-2 gap-4">
             <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Nume *" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
-            <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Specializare" value={form.specialization} onChange={e => setForm({ ...form, specialization: e.target.value })} />
+            <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Specializare *" value={form.specialization} onChange={e => setForm({ ...form, specialization: e.target.value })} />
             <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Telefon" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
-            <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
+            <input className="border rounded-lg px-3 py-2 text-sm" placeholder="Email *" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
           </div>
           <div className="flex gap-2 mt-4">
             <button onClick={handleSubmit} className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
